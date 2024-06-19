@@ -16,8 +16,7 @@ import tkinter as tk
 from tkinter import filedialog
 
 import json, requests
-#insert your personal OpenWeathermap API key here if you have one, and want to use this feature
-APIkey = "5403a1e0442ce1dd18cb1bf7c40e776f"
+APIkey = {API_KEY}
 import time
 time.clock = time.time
 import aiml
@@ -35,16 +34,11 @@ class TTSStream:
     def flush(self):
         pass
 
-# Create a Kernel object. No string encoding (all I/O is unicode)
 kern = aiml.Kernel()
 kern.setTextEncoding(None)
 # Creates First order logic Object
 F = FOL()
-# Use the Kernel's bootstrap() method to initialize the Kernel. The
-# optional learnFiles argument is a file (or list of files) to load.
-# The optional commands argument is a command (or list of commands)
-# to run after the files are loaded.
-# The optional brainFile argument specifies a brain file to load.
+
 kern.bootstrap(learnFiles="ChatBot_Main.xml")
 #######################################################
 # Welcome user
@@ -59,12 +53,9 @@ while True:
     except (KeyboardInterrupt, EOFError) as e:
         print("Bye!")
         break
-    #pre-process user input and determine response agent (if needed)
     responseAgent = 'aiml'
-    #activate selected response agent
     if responseAgent == 'aiml':
         answer = kern.respond(userInput)
-    #post-process the answer for commands
     if answer[0] == '#':
         params = answer[1:].split('$')
         cmd = int(params[0])
