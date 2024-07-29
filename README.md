@@ -1,5 +1,6 @@
 # Chatbot-NLP
 Python Based NLP chatbot, Can answer any questions using wiki API and has built in facts and features related to dogs!
+
 # Features
 - Simple responses based on specific sentences being entered
 - Utilizes WeatherAPI for responses about weather in specific locations
@@ -10,6 +11,7 @@ Python Based NLP chatbot, Can answer any questions using wiki API and has built 
 - Cosine Similarity to know a question even if it is spelt wrong based on a pre-determined Q&A csv file
 - Machine Learning to decipher if given image is a dog or not a dog
 - Documentation available on this regarding exact features including example conversations
+
 # What I Learned and Improved on
 - NLTK for First Order Logic and Cosine Similarity
 - Machine Learning using Tensorflow and Keras with GPU for Binary Image Classification
